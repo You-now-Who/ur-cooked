@@ -1,53 +1,70 @@
 
-console.log("Hello from content script!");
-
-// How to get the URL of the current tab
-chrome.runtime.sendMessage({ message: "get_current_tab_url" }, function (response) {
-  console.log(response.url);
-
-  // Check if the URL is just the base URL
-    if (response.url === "https://www.swiggy.com/") {
-        console.log("This is the base URL");
-        window.location.href = "https://www.swiggy.com/restaurants";
-        alert("Bro what's taking you so LOOOOOONG?");
-        // Redirect to the /restaurants page
-        
-
-    }
-});
-
 let timerElement = document.createElement('div');
 timerElement.style.position = 'fixed';
-timerElement.style.top = '10px';
+timerElement.style.top = '200px';
 timerElement.style.right = '10px';
-timerElement.style.backgroundColor = 'white';
-timerElement.style.border = '1px solid black';
-timerElement.style.padding = '10px';
+timerElement.style.backgroundColor = '#f9f9f9';
+timerElement.style.border = '1px solid #ccc';
+timerElement.style.borderRadius = '8px';
+timerElement.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
+timerElement.style.padding = '15px';
 timerElement.style.zIndex = '10000';
+timerElement.style.fontFamily = 'Arial, sans-serif';
+timerElement.style.color = '#333';
 document.body.appendChild(timerElement);
 
 let startButton = document.createElement('button');
 startButton.innerText = 'Start';
+startButton.style.margin = '5px';
+startButton.style.padding = '10px 20px';
+startButton.style.backgroundColor = '#4CAF50';
+startButton.style.color = 'white';
+startButton.style.border = 'none';
+startButton.style.borderRadius = '5px';
+startButton.style.cursor = 'pointer';
 timerElement.appendChild(startButton);
 
 let stopButton = document.createElement('button');
 stopButton.innerText = 'Stop';
+stopButton.style.margin = '5px';
+stopButton.style.padding = '10px 20px';
+stopButton.style.backgroundColor = '#f44336';
+stopButton.style.color = 'white';
+stopButton.style.border = 'none';
+stopButton.style.borderRadius = '5px';
+stopButton.style.cursor = 'pointer';
 timerElement.appendChild(stopButton);
 
 let resetButton = document.createElement('button');
 resetButton.innerText = 'Reset';
-timerElement.appendChild(resetButton);
+resetButton.style.margin = '5px';
+resetButton.style.padding = '10px 20px';
+resetButton.style.backgroundColor = '#008CBA';
+resetButton.style.color = 'white';
+resetButton.style.border = 'none';
+resetButton.style.borderRadius = '5px';
+resetButton.style.cursor = 'pointer';
+// timerElement.appendChild(resetButton);
 
 let timerDisplay = document.createElement('div');
+timerDisplay.style.marginTop = '10px';
+timerDisplay.style.fontSize = '20px';
+timerDisplay.style.fontWeight = 'bold';
 timerElement.appendChild(timerDisplay);
 
 let timerInterval;
 
 function updateTimerDisplay(elapsedTime) {
     let seconds = Math.floor(elapsedTime / 1000) % 60;
+    if (seconds < 10) {
+        seconds = `0${seconds}`;
+    }
     let minutes = Math.floor(elapsedTime / (1000 * 60)) % 60;
+    if (minutes < 10) {
+        minutes = `0${minutes}`;
+    }
     let hours = Math.floor(elapsedTime / (1000 * 60 * 60));
-    timerDisplay.innerText = `${hours}:${minutes}:${seconds}`;
+    timerDisplay.innerText = `${minutes}:${seconds}`;
 }
 
 startButton.addEventListener('click', () => {
