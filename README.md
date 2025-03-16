@@ -6,6 +6,33 @@
 
 Welcome to **UR Cooked**, the ultimate food ordering assistant that ensures you never waste time on food delivery websites. This project is designed to keep you on track and make sure you order your food quickly and efficiently. If you linger too long, UR Cooked will take matters into its own hands!
 
+## Use of Github
+
+### In the spirity hackathon
+
+So we created our own database in Github lol.
+
+### Version Control
+
+We used GitHub for version control to keep track of all changes made to the project. This allowed us to collaborate efficiently and ensure that all team members were working on the latest version of the code.
+
+### GitHub CLI
+
+The GitHub CLI was used to manage our repository from the command line. This made it easy to perform common tasks such as cloning the repository, creating branches, and pushing changes.
+
+### Project Management
+
+We used GitHub Projects to manage our tasks and track progress. This helped us stay organized and ensure that all features were implemented on time.
+
+### GitHub Actions
+
+GitHub Actions were used to automate our workflows. This included running tests, building the project, and deploying updates. This ensured that our code was always in a deployable state.
+
+### GitHub Issues
+
+We used GitHub Issues to track bugs and feature requests. This allowed us to prioritize our work and ensure that all issues were addressed in a timely manner.
+
+
 ## Features
 
 - **Timer**: Keeps track of how long you've been on the page.
