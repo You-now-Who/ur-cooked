@@ -8,7 +8,8 @@
       "js": [
         "scripts/content-scripts/content-script.js",
         "scripts/content-scripts/swiggy-navigator.js",
-        "scripts/content-scripts/timer.js"
+        "scripts/content-scripts/timer.js",
+        "scripts/content-scripts/gambling.js"
       ],
       "matches": ["http://*.swiggy.com//", "https://*.swiggy.com/**"]
     }
@@ -17,7 +18,15 @@
     "default_popup": "popup.html"
   },
   "background": {
-    "service_worker": "scripts/service-workers/service-worker.js"
+    "service_worker": "scripts/service-workers/service-worker.js",
+    "type": "module"
   },
-  "permissions": ["tabs", "storage", "scripting"]
+  "permissions": ["tabs", "storage", "scripting"],
+  "web_accessible_resources": [
+  {
+    "resources": ["config.json", "funny_sound1.wav", "blahaj.jpg", "https://media.tenor.com/AdMlxs87UgYAAAAM/michael-jordan-get-some-help.gif", "https://media.tenor.com/arqlNu8gyJYAAAAM/cat-cat-jumping.gif", "rec1.mp3", "rec2.mp3", "rec3.mp3", "rec4.mp3", "sus.mp3"],
+    "matches": ["<all_urls>"]
+  }
+]
+
 }

@@ -1,16 +1,20 @@
 
 let timerElement = document.createElement('div');
 timerElement.style.position = 'fixed';
-timerElement.style.top = '200px';
+timerElement.style.top = '10px';
 timerElement.style.right = '10px';
-timerElement.style.backgroundColor = '#f9f9f9';
-timerElement.style.border = '1px solid #ccc';
+timerElement.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+timerElement.style.border = '2px solid #fff';
 timerElement.style.borderRadius = '8px';
-timerElement.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
-timerElement.style.padding = '15px';
+timerElement.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.3)';
+timerElement.style.padding = '10px';
 timerElement.style.zIndex = '10000';
-timerElement.style.fontFamily = 'Arial, sans-serif';
-timerElement.style.color = '#333';
+timerElement.style.fontFamily = 'Courier New, monospace';
+timerElement.style.color = '#fff';
+timerElement.style.display = 'flex';
+timerElement.style.flexDirection = 'column';
+timerElement.style.alignItems = 'center';
+timerElement.style.minWidth = '150px';
 document.body.appendChild(timerElement);
 
 let startButton = document.createElement('button');
@@ -22,7 +26,7 @@ startButton.style.color = 'white';
 startButton.style.border = 'none';
 startButton.style.borderRadius = '5px';
 startButton.style.cursor = 'pointer';
-timerElement.appendChild(startButton);
+// timerElement.appendChild(startButton);
 
 let stopButton = document.createElement('button');
 stopButton.innerText = 'Stop';
@@ -33,7 +37,7 @@ stopButton.style.color = 'white';
 stopButton.style.border = 'none';
 stopButton.style.borderRadius = '5px';
 stopButton.style.cursor = 'pointer';
-timerElement.appendChild(stopButton);
+// timerElement.appendChild(stopButton);
 
 let resetButton = document.createElement('button');
 resetButton.innerText = 'Reset';
@@ -106,4 +110,4 @@ chrome.runtime.sendMessage({ action: 'getTimerState' }, (state) => {
             });
         }, 1000);
     }
-});
+}); 

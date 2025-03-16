@@ -35,4 +35,11 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         restaurantAddState = !restaurantAddState;
         sendResponse(restaurantAddState);
     }
+    else if (request.action === "logStatistics") {
+        chrome.storage.local.get(['statistics'], (result) => {
+          let statistics = result.statistics || {};
+          statistics[request.stat] = (statistics[request.stat] || 0) + 1;
+          chrome.storage.local.set({ statistics: statistics });
+        });
+      }
 });
