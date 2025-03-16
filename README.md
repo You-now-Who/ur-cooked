@@ -2,6 +2,8 @@
 
 ![UR Cooked](https://media.giphy.com/media/3o6Zt481isNVuQI1l6/giphy.gif)
 
+(The gif is intentionally misplaced. Just like our brains in this hackathon)
+
 Welcome to **UR Cooked**, the ultimate food ordering assistant that ensures you never waste time on food delivery websites. This project is designed to keep you on track and make sure you order your food quickly and efficiently. If you linger too long, UR Cooked will take matters into its own hands!
 
 ## Features
